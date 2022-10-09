@@ -6,13 +6,13 @@ public enum Position {
 	public String toString() {
 		switch (this) {
 		case CONCIERGE:
-			return "Concierge";
+			return "CONCIERGE";
 		case HOUSEKEEPING:
-			return "Housekeeping";
+			return "HOUSEKEEPING";
 		case FRONT_DESK:
-			return "Front Desk";
+			return "FRONT_DESK Desk";
 		case SECURITY:
-			return "Security";
+			return "SECURITY";
 		}
 		return "";
 	}

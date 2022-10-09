@@ -1,24 +1,22 @@
 package com.linkedin.sbet.landon.roomwebapp.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.linkedin.sbet.landon.roomwebapp.data.RoomRepository;
 import com.linkedin.sbet.landon.roomwebapp.models.Room;
 
 @Service
 public class RoomService {
 
-	private static final List<Room> rooms = new ArrayList<>();
+	private final RoomRepository roomRepository;
 
-	static {
-		for (int i = 0; i < 10; i++) {
-			rooms.add(new Room(i, "Room" + i, "RoomName" + i, "Info" + i));
-		}
+	public RoomService(RoomRepository roomRepository) {
+		this.roomRepository = roomRepository;
 	}
 
 	public List<Room> getAllRooms() {
-		return rooms;
+		return roomRepository.findAll();
 	}
 }
